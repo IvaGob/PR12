@@ -6,33 +6,33 @@ using namespace std;
 template <typename T>
 class Rectangle {
 public:
-    // Ïîëÿ êëàñó
-    T height; // Âèñîòà ïðÿìîêóòíèêà
-    T width; // Øèðèíà ïðÿìîêóòíèêà
-    Rectangle() { // Êîíñòðóêòîð áåç ïàðàìåòð³â
+    // ÐŸÐ¾Ð»Ñ ÐºÐ»Ð°ÑÑƒ
+    T height; // Ð’Ð¸ÑÐ¾Ñ‚Ð° Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ°
+    T width; // Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ°
+    Rectangle() { // ÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ñ–Ð²
         height = 0;
         width = 0;
     }
-    Rectangle(T a, T b) { // Êîíñòðóêòîð ç ïàðàìåòðàìè
+    Rectangle(T a, T b) { // ÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸
         height = a;
         width = b;
     }
-    // Äåñòðóêòîð êëàñó
+    // Ð”ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ»Ð°ÑÑƒ
     ~Rectangle() {
-        // Í³÷îãî íå ðîáèòè
+        // ÐÑ–Ñ‡Ð¾Ð³Ð¾ Ð½Ðµ Ñ€Ð¾Ð±Ð¸Ñ‚Ð¸
     }
-    // Îïåðàö³ÿ ïðèñâîþâàííÿ
+    // ÐžÐ¿ÐµÑ€Ð°Ñ†Ñ–Ñ Ð¿Ñ€Ð¸ÑÐ²Ð¾ÑŽÐ²Ð°Ð½Ð½Ñ
     Rectangle& operator=(const Rectangle& r) {
         height = r.height;
         width = r.width;
         return *this;
     }
-    //Çíàõîäæåííÿ ïëîù³
+    //Ð—Ð½Ð°Ñ…Ð¾Ð´Ð¶ÐµÐ½Ð½Ñ Ð¿Ð»Ð¾Ñ‰Ñ–
     T Area() {
         return height * width;
     }
 
-    // Îïåðàö³¿ ââåäåííÿ-âèâåäåííÿ
+    // ÐžÐ¿ÐµÑ€Ð°Ñ†Ñ–Ñ— Ð²Ð²ÐµÐ´ÐµÐ½Ð½Ñ-Ð²Ð¸Ð²ÐµÐ´ÐµÐ½Ð½Ñ
     friend std::istream& operator>>(std::istream& in, Rectangle& r);
     friend std::ostream& operator<<(std::ostream& out, const Rectangle& r);
 };
@@ -43,33 +43,33 @@ int main()
     Rectangle<int> sq1;
     Rectangle<float> sq2;
     Rectangle<double> sq3;
-    cout << "Ââåä³òü âèñîòó ³ øèðèíó ïðÿìîêóòíèêà (int):\n";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð²Ð¸ÑÐ¾Ñ‚Ñƒ Ñ– ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ° (int):\n";
     cin >> sq1.height;
     cin >> sq1.width;
-    cout << "Ââåä³òü âèñîòó ³ øèðèíó ïðÿìîêóòíèêà (float):\n";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð²Ð¸ÑÐ¾Ñ‚Ñƒ Ñ– ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ° (float):\n";
     cin >> sq2.height;
     cin >> sq2.width;
-    cout << "Ââåä³òü âèñîòó ³ øèðèíó ïðÿìîêóòíèêà (double):\n";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð²Ð¸ÑÐ¾Ñ‚Ñƒ Ñ– ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ° (double):\n";
     cin >> sq3.height;
     cin >> sq3.width;
-    cout << "Âèñîòà ïðÿìîêóòíèêà(int)" << sq1.Area() << endl;
-    cout << "Âèñîòà ïðÿìîêóòíèêà(float)" << sq2.Area() << endl;
-    cout << "Âèñîòà ïðÿìîêóòíèêà(double)" << sq3.Area() << endl;
+    cout << "Ð’Ð¸ÑÐ¾Ñ‚Ð° Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ°(int)" << sq1.Area() << endl;
+    cout << "Ð’Ð¸ÑÐ¾Ñ‚Ð° Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ°(float)" << sq2.Area() << endl;
+    cout << "Ð’Ð¸ÑÐ¾Ñ‚Ð° Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ°(double)" << sq3.Area() << endl;
 
     ofstream outf("Dialogue.txt");
     if (outf) {
-        outf << "Ââåä³òü âèñîòó ³ øèðèíó ïðÿìîêóòíèêà (int):\n";
+        outf << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð²Ð¸ÑÐ¾Ñ‚Ñƒ Ñ– ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ° (int):\n";
         outf << sq1.height << endl;
         outf << sq1.width << endl;
-        outf << "Ââåä³òü âèñîòó ³ øèðèíó ïðÿìîêóòíèêà (float):\n";
+        outf << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð²Ð¸ÑÐ¾Ñ‚Ñƒ Ñ– ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ° (float):\n";
         outf << sq2.height << endl;
         outf << sq2.width << endl;
-        outf << "Ââåä³òü âèñîòó ³ øèðèíó ïðÿìîêóòíèêà (double):\n";
+        outf << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð²Ð¸ÑÐ¾Ñ‚Ñƒ Ñ– ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ° (double):\n";
         outf << sq3.height << endl;
         outf << sq3.width << endl;
-        outf << "Âèñîòà ïðÿìîêóòíèêà(int)" << sq1.Area() << endl;
-        outf << "Âèñîòà ïðÿìîêóòíèêà(float)" << sq2.Area() << endl;
-        outf << "Âèñîòà ïðÿìîêóòíèêà(double)" << sq3.Area() << endl;
+        outf << "Ð’Ð¸ÑÐ¾Ñ‚Ð° Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ°(int)" << sq1.Area() << endl;
+        outf << "Ð’Ð¸ÑÐ¾Ñ‚Ð° Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ°(float)" << sq2.Area() << endl;
+        outf << "Ð’Ð¸ÑÐ¾Ñ‚Ð° Ð¿Ñ€ÑÐ¼Ð¾ÐºÑƒÑ‚Ð½Ð¸ÐºÐ°(double)" << sq3.Area() << endl;
     }
     return 0;
 }
